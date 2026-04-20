@@ -3,55 +3,85 @@
   <head>
     <title>Team Rohaan Epic First Brainstorm</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Meeting minutes for Team Rohaan's first brainstorm session on the Pomodoro Timer project." />
     <meta name="author" content="Team Rohaan" />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .badge-absent {
+        display: inline-block;
+        background: #fdecea;
+        color: #c0392b;
+        font-size: 0.72rem;
+        padding: 1px 7px;
+        border-radius: 99px;
+        font-weight: 600;
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+
+      .badge-facilitator {
+        display: inline-block;
+        background: rgba(200, 150, 62, 0.18);
+        color: #8a5f10;
+        font-size: 0.72rem;
+        padding: 1px 7px;
+        border-radius: 99px;
+        font-weight: 600;
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+    </style>
   </head>
   <body>
+
+    <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 
     <header>
       <h1>Team Rohaan Meeting Minutes</h1>
       <nav>
-        <a href="#agenda">Agenda</a> |
-        <a href="#unfinished">Unfinished Business</a> |
-        <a href="#new-business">New Business</a> |
-        <a href="#misc">Miscellaneous</a> |
-        <a href="#media">Media</a> |
-        <a href="#feedback">Feedback Form</a>
+        <a href="#overview">Overview</a>
+        <a href="#attendance">Attendance</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#unfinished">Unfinished</a>
+        <a href="#new-business">New Business</a>
+        <a href="#misc">Misc</a>
+        <a href="#media">Media</a>
+        <a href="#feedback">Feedback</a>
       </nav>
-      <hr />
     </header>
 
     <main>
 
-
+      <!-- Overview -->
       <section id="overview">
         <h2>First Brainstorm</h2>
         <h3>Topic: <em>Project Kickoff &amp; Feature Brainstorming</em></h3>
         <h3>Date: <time datetime="2025-04-08">April 8, 2025</time></h3>
 
-        <p>
-          Official meeting notes blah blah blah
+        <!-- Inline CSS example (required by lab) -->
+        <p style="background: #fffbf0; border-left: 3px solid #c8963e; padding: 0.6rem 1rem; border-radius: 4px; font-size: 0.95rem;">
+          Official meeting notes for Team Rohaan's first brainstorm session on the Pomodoro Timer project.
         </p>
 
         <div>
           <span><b>Location:</b> CSE Fishbowl</span>
           <br />
-          <span><b>Facilitator:</b> Rohaan </span>
+          <span><b>Facilitator:</b> Rohaan</span>
         </div>
       </section>
 
       <hr />
 
-      <!-- Attendance -->
       <section id="attendance">
         <h2>Attendance</h2>
         <ul>
-          <li>Rohaan <em>(Facilitator)</em></li>
+          <li>Rohaan <span class="badge-facilitator">Facilitator</span></li>
           <li>Bob 1</li>
           <li>Bob 2</li>
           <li>Bob 3</li>
-          <li>Not Bob <em>(Absent)</em></li>
+          <li>Not Bob <span class="badge-absent">Absent</span></li>
         </ul>
       </section>
 
@@ -78,17 +108,16 @@
         <p>The following items were carried over from the previous check-in meeting:</p>
         <ul>
           <li>
-            <strong>GitHub repository setup</strong> Bob 1 was assigned to create the repo
+            <strong>GitHub repository setup</strong> — Bob 1 was assigned to create the repo
             and add everyone as collaborators. <b>Status:</b> Still pending as of this meeting.
             Bob 1 will complete by <time datetime="2025-04-10">April 10</time>.
           </li>
           <li>
-            <strong>Tech stack decision</strong> The team had not finalized whether to use
-            React or vanilla JavaScript. After a short discussion, the team agreed on
+            <strong>Tech stack decision</strong> — The team agreed on
             <strong>React</strong> for the frontend.
           </li>
           <li>
-            <strong>Design mockup</strong> Bob 3 volunteered to draft a wireframe.
+            <strong>Design mockup</strong> — Bob 3 volunteered to draft a wireframe.
             <b>Status:</b> In progress; will be shared by end of week.
           </li>
         </ul>
@@ -103,7 +132,7 @@
         <h3>Feature Brainstorm</h3>
         <p>
           The team spent <strong>20 minutes</strong> whiteboarding core and stretch features
-          for the Pomodoro Timer app. Key decisions are summarized below.
+          for the Pomodoro Timer app.
         </p>
 
         <h3>Core Features (Must-Have)</h3>
@@ -123,8 +152,8 @@
           <li>Dark mode</li>
         </ul>
 
-        <h3>Task Assignments - Sprint 1</h3>
-        <p>Tasks were distributed as follows for the first sprint ending <time datetime="2025-04-22">April 22</time>:</p>
+        <h3>Task Assignments — Sprint 1</h3>
+        <p>Tasks distributed for sprint ending <time datetime="2025-04-22">April 22</time>:</p>
         <ul>
           <li><strong>Rohaan:</strong> Project scaffolding and routing</li>
           <li><strong>Bob 1:</strong> Timer logic and state management</li>
@@ -163,24 +192,22 @@
         <h2>Diagrams, Audio &amp; Video</h2>
 
         <h3>Whiteboard Architecture Diagram</h3>
-        <p>The following photo was taken of the whiteboard diagram drawn during the brainstorm:</p>
+        <p>Photo taken of the whiteboard diagram during the brainstorm:</p>
         <img
           src="whiteboard.png"
-          alt="Whiteboard diagram showing the Pomodoro Timer component architecture: a top-level App component containing TimerDisplay, Controls, and SessionCounter child components, connected by state arrows"
-          width="600"
+          alt="Whiteboard diagram showing the Pomodoro Timer component architecture"
+          class="media-item"
         />
 
         <h3>Audio Recording</h3>
-        <p>A short audio recording was captured during the meeting:</p>
-        <audio controls>
+        <audio controls class="media-item">
           <source src="IMG_2473.MOV" type="audio/mpeg" />
           <source src="meeting-audio.ogg" type="audio/ogg" />
           Your browser does not support the audio element.
         </audio>
 
         <h3>Video Recording</h3>
-        <p>A short video recording was also captured:</p>
-        <video controls width="600">
+        <video controls class="media-item">
           <source src="IMG_2473.MOV" type="video/mp4" />
           <source src="meeting-video.webm" type="video/webm" />
           Your browser does not support the video element.
@@ -216,7 +243,6 @@
           <fieldset>
             <legend>Meeting Rating</legend>
             <p>How would you rate today's meeting overall?</p>
-
             <label><input type="radio" name="rating" value="excellent" /> Excellent</label><br />
             <label><input type="radio" name="rating" value="good" /> Good</label><br />
             <label><input type="radio" name="rating" value="fair" /> Fair</label><br />
@@ -237,9 +263,9 @@
               <label for="preferred-time">Choose a preferred time slot:</label><br />
               <select id="preferred-time" name="preferred-time">
                 <option value="">-- Select a time --</option>
-                <option value="morning">Morning (9 AM - 12 PM)</option>
-                <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
-                <option value="evening">Evening (4 PM - 7 PM)</option>
+                <option value="morning">Morning (9 AM – 12 PM)</option>
+                <option value="afternoon">Afternoon (12 PM – 4 PM)</option>
+                <option value="evening">Evening (4 PM – 7 PM)</option>
               </select>
             </p>
 
