@@ -1,0 +1,530 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+/* --- CSS Variables & Fallbacks --- */
+:root {
+  --primary: #1a1a2e;
+  --accent: #c8963e;
+  --accent-light: #e8b96a;
+  --bg: #f5f0e8;
+  --bg-card: #fffdf7;
+  --text: #2c2c2c;
+  --text-muted: #6b6b6b;
+  --border: #d4c4a0;
+  --header-height: 80px;
+  --section-gap: 2.5rem;
+  --radius: 4px;
+}
+
+/* --- Universal Selector --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Element Selector --- */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: var(--bg, #f5f0e8); 
+  color: var(--text, #2c2c2c);
+  line-height: 1.7; 
+  min-width: 280px; 
+}
+
+/* --- Header & Nav Layout (Flexbox) --- */
+header {
+  background-color: var(--primary);
+  color: #fff;
+  padding-top: 2rem;   
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem; 
+  position: sticky;   
+  top: 0;
+  z-index: 100;
+  border-bottom-style: solid; 
+  border-bottom-color: var(--accent);
+  border-bottom-width: 3px;
+}
+
+header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem;   
+  color: var(--accent-light);
+  text-align: left;
+  letter-spacing: 0.03em;
+}
+
+/* --- Nav using Flexbox --- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  align-items: center;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 4px 10px; 
+  border-radius: var(--radius);
+  transition: color 0.2s, background 0.2s;
+}
+
+/* --- Pseudo-class: hover --- */
+nav a:hover {
+  color: var(--accent-light);
+  background: rgba(200, 150, 62, 0.15);
+}
+
+/* --- Pseudo-class: active --- */
+nav a:active {
+  color: #fff;
+}
+
+/* Hiding the "|" separators — display: none */
+nav span.sep {
+  display: none;
+}
+
+/* --- Main Layout --- */
+main {
+  max-width: 860px;     
+  min-width: 280px;     
+  width: 90%;   
+  margin: auto;        
+  padding: 2.5rem 0;
+}
+
+/* --- Section Cards --- */
+section {
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  margin-bottom: var(--section-gap);  
+  padding: 2rem 2.5rem;              
+  border-left-style: solid;
+  border-left-color: var(--accent);
+  border-left-width: 4px;
+  border-left-style: solid; 
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  position: relative;
+}
+
+/* --- Headings --- */
+h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--primary);
+  text-align: left;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: color(srgb 0.35 0.25 0.05); 
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* --- Selector List: p, li --- */
+p, li {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* --- Descendant Combinator: section p --- */
+section p {
+  margin-bottom: 0.75rem;
+}
+
+/* --- Child Combinator: section > ul --- */
+section > ul,
+section > ol {
+  padding-left: 1.5rem; 
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* --- Colors: rgb, hex, hsl, name --- */
+strong {
+  color: rgb(26, 26, 46);        
+}
+
+em {
+  color: #c8963e;          
+}
+
+time {
+  color: hsl(33, 55%, 38%); 
+  font-weight: 600;
+}
+
+/* --- General sibling combinator: h3 ~ p --- */
+h3 ~ p {
+  color: var(--text-muted);
+}
+
+/* --- Adjacent sibling combinator: h2 + p --- */
+h2 + p {
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+/* --- Attribute Selector --- */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  max-width: 500px;  
+  height: auto; 
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background-color: var(--bg);
+  border-style: solid;
+  border-color: var(--border);
+  border-width: 1px;
+  border-radius: var(--radius);
+  padding-top: 0.5rem;    
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-top: 4px;       
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;          
+  display: block;        
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* --- Combining Two Selectors: button.submit --- */
+button[type="submit"] {
+  background-color: var(--primary);
+  color: #fff;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.95rem;
+  /* shorthand padding */
+  padding: 0.6rem 1.5rem; 
+  border-style: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  /* display: inline-block */
+  display: inline-block;   
+  margin-right: 0.75rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--accent);
+}
+
+button[type="submit"]:active {
+  transform: scale(0.97);
+}
+
+button[type="reset"] {
+  background-color: transparent;
+  color: var(--text-muted);
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border-style: solid;
+  border-color: var(--border);
+  border-width: 1px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: inline-block;
+  transition: border-color 0.2s;
+}
+
+button[type="reset"]:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Fieldset & Legend --- */
+fieldset {
+  border-style: solid;
+  border-color: var(--border);
+  border-width: 1px;
+  border-radius: var(--radius);
+  /* shorthand margin */
+  margin: 0 0 1.25rem 0; 
+  /* shorthand padding */
+  padding: 1rem 1.25rem;  
+}
+
+legend {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--accent);
+  /* shorthand */
+  padding: 0 6px;        
+  font-weight: 700;
+}
+
+/* --- HR --- */
+hr {
+  border-style: none;
+  border-top-style: solid;
+  border-top-color: var(--border);
+  border-top-width: 1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Details / Summary --- */
+details {
+/* color-mix */
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg)); 
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  border-left: 3px solid var(--accent-light);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+summary:hover {
+  color: var(--accent);
+}
+
+/* --- Attendance List Grid --- */
+#attendance ul {
+  display: grid;                       
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.5rem;
+  grid-auto-rows: minmax(32px, auto); 
+  list-style: none;
+  padding: 0;
+}
+
+#attendance ul li {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 6px 12px;  
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+/* --- :has() selector — highlight section that has a time element --- */
+section:has(time) {
+  border-left-color: var(--accent-light);
+}
+
+/* --- Nested Selectors --- */
+#new-business {
+  & h3 {
+    font-size: 1.05rem;
+  }
+  & ol, & ul {
+    margin-top: 0.4rem;
+  }
+}
+
+/* --- ID Selector --- */
+#feedback {
+  background: color-mix(in srgb, var(--primary) 4%, var(--bg-card));
+}
+
+/* --- Class Selector (applied to media section images/audio) --- */
+.media-item {
+  display: block;         
+  margin: 1rem auto;     
+  max-width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* --- Image sizing --- */
+img {
+/* sizing */
+  max-width: 100%;   
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border-style: solid;
+  border-color: var(--border);
+  border-width: 1px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* --- Audio / Video --- */
+audio, video {
+  display: block;      
+  width: 100%;
+  max-width: 600px;
+  margin: 0.75rem 0;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--primary);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* --- Position: fixed — scroll to top button --- */
+#scroll-top {
+  position: fixed;
+  bottom: 24pt;        
+  right: 24pt;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.5cm;        
+  height: 2.5cm;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background 0.2s, transform 0.2s;
+  z-index: 200;
+}
+
+#scroll-top:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* --- RGBA color example --- */
+.tag {
+  display: inline-block;
+  background: rgba(200, 150, 62, 0.15);
+  color: var(--accent);
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* --- HSLA color example --- */
+blockquote, q {
+  color: hsla(220, 20%, 30%, 0.85);
+  font-style: italic;
+}
+
+/* --- Text decoration --- */
+a {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  main {
+    width: 95%;
+    padding: 1.5rem 0;
+  }
+
+  section {
+    padding: 1.25rem 1.25rem;
+  }
+
+  #attendance ul {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    gap: 0.3rem;
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.1rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+    padding: 3px 7px;
+  }
+
+  section {
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  button[type="submit"],
+  button[type="reset"] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+
+  #scroll-top {
+    width: 2cm;
+    height: 2cm;
+    font-size: 1rem;
+    bottom: 16pt;
+    right: 16pt;
+  }
+}
